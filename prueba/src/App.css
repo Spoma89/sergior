@@ -53,3 +53,8 @@ h1{
   color:blue;
   font-size: 500px;
 }
+button{ 
+  background: blue;
+  border-radius: 15px;
+
+}

@@ -2,11 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/navbar/navbar.js'
 import CartWidget from './components/carro/CartWidget.js'
-import ItemListContainer from './components/itemlistcontainer/ItemListContainer.js'
+import ItemCount  from './components/contador/ItemCount.js'
 
 
 
 function App() {
+
 
 const saludo = 'Hola'
 
@@ -14,7 +15,7 @@ const saludo = 'Hola'
     <div className="App">
    
     <Navbar/>
-    <ItemListContainer saludo={ saludo } />
+    <ItemCount/>
     
 
     </div>
