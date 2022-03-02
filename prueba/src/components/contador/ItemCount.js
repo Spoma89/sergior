@@ -16,10 +16,12 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
     const agregar = () => {
         onAdd( count )
+     
     }
-
+    console.log(count)
     return (
         <div>
+        	
             <button onClick={restar}> - </button>
             <label> {count} </label>
             <button onClick={sumar}> + </button><br />

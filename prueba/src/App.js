@@ -15,7 +15,7 @@ const saludo = 'Hola'
     <div className="App">
    
     <Navbar/>
-    <ItemCount/>
+    <ItemCount initial={1} stock={10} onAdd={() =>console.log(onAdd)}/>
     
 
     </div>
