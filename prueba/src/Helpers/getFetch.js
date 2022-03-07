@@ -12,7 +12,7 @@ export const productos = [
     { id: 8,  foto:'' ,categoria: 'electricidad', name: "sxcx", price: 515 },
   ]
   
- const getFetch = new Promise((resolve, reject)=>{
+ export const getFetch = new Promise((resolve, reject)=>{
       // tareas que realizaremos
       let url = 'yyy.com'
       
@@ -25,4 +25,4 @@ export const productos = [
       }
   })
 
-  export default getFetch
+  

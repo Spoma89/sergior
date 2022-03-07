@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 
-import getFetch from './components/Item.js'
-import ItemCount  from './components/contador/ItemCount.js'
+import {getFetch } from '../../Helpers/getFetch.js'
+import {productos} from '../../Helpers/getFetch.js'
+
+
 
 function ItemListContainer( {greeting} )  {
   const [productos, setProductos] = useState([])
@@ -23,8 +25,8 @@ function ItemListContainer( {greeting} )  {
     }
 
   console.log(productos)
-  return (
-      
+ return (
+      // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
       <>
             <h1>{ greeting }</h1>
             {   loading ? <h1>Cargando...</h1>
@@ -59,4 +61,7 @@ function ItemListContainer( {greeting} )  {
         </>
     )}
 export default ItemListContainer
+
+
+
 
