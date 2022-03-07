@@ -3,7 +3,8 @@ import React from 'react';
 import CartWidget from '../carro/CartWidget.js'
 
 
-const Navbar = props => (
+const Navbar = () => {
+  return(
   
 
 <ul className="nav justify-content-center">
@@ -22,8 +23,8 @@ const Navbar = props => (
   </li>
   
 </ul>
+)
 
-  
-);
+}
 
 export default Navbar;

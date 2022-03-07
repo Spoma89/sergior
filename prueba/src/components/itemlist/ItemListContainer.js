@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import {getFetch } from '../../Helpers/getFetch.js'
 import {productos} from '../../Helpers/getFetch.js'
-
+import ItemCount  from '../../components/contador/ItemCount.js'
 
 
 function ItemListContainer( {greeting} )  {
@@ -25,6 +25,7 @@ function ItemListContainer( {greeting} )  {
     }
 
   console.log(productos)
+
  return (
       // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
       <>
