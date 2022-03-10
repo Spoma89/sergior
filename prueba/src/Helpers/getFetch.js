@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 
 
 
@@ -11,6 +11,10 @@ export const productos = [
     { id: 7,  foto:'' ,categoria: 'herramientas', name: "sxxc", price: 545 },
     { id: 8,  foto:'' ,categoria: 'electricidad', name: "sxcx", price: 515 },
   ]
+
+
+
+
   
  export const getFetch = new Promise((resolve, reject)=>{
       // tareas que realizaremos
