@@ -1,7 +1,7 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
 import {getFetch}   from '../../Helpers/getFetch.js'
-import ItemDetail from '../../components/itemdetail/ItemDetail.js '
+import ItemDetail from '../../components/itemdetail/ItemDetail.js'
 
 const ItemDetailContainer = () => {
  const [producto, setProducto] = useState({})
