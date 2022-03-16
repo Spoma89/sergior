@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect,useState} from 'react'
 import {getFetch}   from '../../Helpers/getFetch.js'
 import ItemDetail from '../../components/itemdetail/ItemDetail.js'
-import {useParams} from "react-router-dom"
+import { useParams } from 'react-router-dom'
 
 
 
@@ -10,16 +10,16 @@ import {useParams} from "react-router-dom"
 
 const ItemDetailContainer = () => {
  const [producto, setProducto] = useState({})
- const { detalleid } = useParams ()
-	console.log(detalleid)
+ const { detalleId } = useParams()
+	
 useEffect(()=>{ 
 
 getFetch
-.then(resp => setProducto(resp.find(prod=> prod.id===2)))
+.then(resp => setProducto(resp.find(prod=> prod.id===detalleId)))
 
 
 
-console.log(producto)
+
 
 
 },[]) 
@@ -27,11 +27,11 @@ console.log(producto)
 
   return (
     
+<>
+   <ItemDetail producto={producto} />
 
-   <ItemDetail producto={producto}/>
-
-    
-  );
-};
+  </>  
+  )
+}
 
 export default ItemDetailContainer;

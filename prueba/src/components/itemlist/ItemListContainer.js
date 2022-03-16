@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import {getFetch } from '../../Helpers/getFetch.js'
 import {productos} from '../../Helpers/getFetch.js'
 import ItemCount  from '../../components/contador/ItemCount.js'
-
+import { Link } from 'react-router-dom'
 
 function ItemListContainer( {greeting} )  {
   const [productos, setProductos] = useState([])
@@ -45,11 +45,11 @@ function ItemListContainer( {greeting} )  {
                                                     {prod.price}                                                            
                                                 </div>
                                                 <div className="card-footer">
-                                                    {/* <Link to={`/detalle/${prod.id}`}> */}
+                                                     <Link to={`/detalle/${prod.id}`}> 
                                                         <button className="btn btn-outline-primary btn-block">
                                                             detalle del producto
                                                         </button>                                              
-                                                    {/* </Link>                                             */}
+                                                     </Link>                                             
                                                                                                                 
                                                 </div>
                                             </div>
