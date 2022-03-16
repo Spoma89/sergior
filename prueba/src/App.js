@@ -6,7 +6,7 @@ import CartWidget from './components/carro/CartWidget.js'
 import ItemCount  from './components/contador/ItemCount.js'
 import ItemListContainer from './components/itemlist/ItemListContainer.js'
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.js'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
 

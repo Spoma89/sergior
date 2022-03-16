@@ -6,8 +6,8 @@ const ItemDetail = ({producto})=>{
 
 	<div>
 		<h2>{producto.name}</h2>
-		<h3>{producto.price}</h3>
-		<h4>{producto.foto}</h4>
+		<h3>${producto.price}</h3>
+		<img src={producto.foto} className="r" alt="cemento"></img>
 		<p>{producto.categoria}</p>
 	</div>
 	)

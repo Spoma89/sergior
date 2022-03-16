@@ -62,5 +62,18 @@ button{
 
 }
 body{
-  background-color: grey;
+  background: linear-gradient(#16151B   , #0C00FF  );
+}
+h2{
+  font-size: 25px;
+  color:#ffff;
+}
+h3{
+  font-size: 20px;
+  color:#ffff;
+}
+.r{
+  height: 350px;
+  width: 265px;
+  border-radius: 5px;
 }
