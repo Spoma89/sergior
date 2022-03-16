@@ -2,9 +2,16 @@ import React from 'react'
 import {useEffect,useState} from 'react'
 import {getFetch}   from '../../Helpers/getFetch.js'
 import ItemDetail from '../../components/itemdetail/ItemDetail.js'
+import {useParams} from "react-router-dom"
+
+
+
+
 
 const ItemDetailContainer = () => {
  const [producto, setProducto] = useState({})
+ const { detalleid } = useParams ()
+	console.log(detalleid)
 useEffect(()=>{ 
 
 getFetch

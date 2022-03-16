@@ -1,27 +1,29 @@
 import React from 'react';
 
 import CartWidget from '../carro/CartWidget.js'
-
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return(
   
 
 <ul className="nav justify-content-center">
-<CartWidget/>
+
   <li className="nav-item">
-    <a className="nav-link active" aria-current="page" href="Productos">Productos</a>
+  <NavLink className="nav-link" to="/">home</NavLink>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Ofertas</a>
+    <NavLink className="nav-link" to="detalle">detalle</NavLink>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Quienes somos</a>
+    <NavLink className="nav-link" to="/"></NavLink>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Cotizaciones</a>
+    <NavLink to="count" >
+   <CartWidget/>
+  </NavLink>
   </li>
-  
+ 
 </ul>
 )
 
