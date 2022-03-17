@@ -62,18 +62,29 @@ button{
 
 }
 body{
-  background: linear-gradient(#16151B   , #0C00FF  );
+  background-color: #C9C5DE;
 }
 h2{
   font-size: 25px;
-  color:#ffff;
+  color:grey;
 }
 h3{
   font-size: 20px;
-  color:#ffff;
+  color:grey;
 }
 .r{
   height: 350px;
   width: 265px;
   border-radius: 5px;
+}
+.nav-item{
+  padding: 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.nav-link{
+  padding: 15px;
+  text-decoration: none;
+  font-size: 40px;
+  margin-right:300px;
 }

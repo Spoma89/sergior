@@ -7,7 +7,7 @@ import ItemCount  from './components/contador/ItemCount.js'
 import ItemListContainer from './components/itemlist/ItemListContainer.js'
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.js'
 
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
 
 
@@ -21,9 +21,10 @@ function App() {
     <Navbar />
     <Routes>
      <Route path='/detalle/:detalleId'element={<ItemDetailContainer />} />
+      <Route path='/' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />                                        
+     <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />
+     <Route path='/count'element={<ItemCount initial={1} stock={10} onAdd={1} />}/>
     
-    <Route path='/count'element={<ItemCount initial={1} stock={10} onAdd={0} />}/>
-    <Route path='/'element={<ItemListContainer />}/>
     <Route path='/*' element={ <Navigate to='/'replace />} />
    
    	</Routes>

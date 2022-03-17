@@ -9,12 +9,14 @@ const Navbar = () => {
 
 <ul className="nav justify-content-center">
 
-  <li className="nav-item">
-  <NavLink className="nav-link" to="/">home</NavLink>
+  <li className="nav-link">
+  <NavLink to="/">home</NavLink>
   </li>
-  
   <li className="nav-item">
-    <NavLink className="nav-link" to="/"></NavLink>
+  <NavLink  to="categoria/Obras">Obras</NavLink>
+  </li>
+  <li className="nav-item">
+    <NavLink  to="categoria/Agua">Agua</NavLink>
   </li>
   <li className="nav-item">
     <NavLink to="count" >
@@ -28,3 +30,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+ 
