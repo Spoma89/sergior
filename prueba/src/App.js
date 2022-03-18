@@ -10,8 +10,9 @@ import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailCont
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
 
-
-
+const onAdd= cant =>{
+ console.log(cant)
+}
 
   return (
     
@@ -23,7 +24,7 @@ function App() {
      <Route path='/detalle/:detalleId'element={<ItemDetailContainer />} />
       <Route path='/' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />                                        
      <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />
-     <Route path='/count'element={<ItemCount initial={1} stock={10} onAdd={1} />}/>
+     <Route path='/count'element={<ItemCount initial={1} stock={100} onAdd={onAdd} />}/>
     
     <Route path='/*' element={ <Navigate to='/'replace />} />
    
