@@ -25,11 +25,13 @@ const onAdd= cant =>{
       <Route path='/' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />                                        
      <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />
      <Route path='/count'element={<ItemCount initial={1} stock={100} onAdd={onAdd} />}/>
+    <Route path='/cart'element={<CartWidget />}/>
     
     <Route path='/*' element={ <Navigate to='/'replace />} />
    
    	</Routes>
     </div>
+    
     </BrowserRouter>
   );
 }
