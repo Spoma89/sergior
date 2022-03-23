@@ -6,6 +6,13 @@ import CartWidget from './components/carro/CartWidget.js'
 import ItemCount  from './components/contador/ItemCount.js'
 import ItemListContainer from './components/itemlist/ItemListContainer.js'
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.js'
+import CartContextProvider from './components/context/CartContext.js'
+
+
+
+
+
+
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
@@ -16,6 +23,8 @@ const onAdd= cant =>{
 
   return (
     
+  <CartContextProvider>
+
   	<BrowserRouter>
     <div className="App">
    
@@ -33,6 +42,7 @@ const onAdd= cant =>{
     </div>
     
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 
