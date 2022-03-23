@@ -90,7 +90,7 @@ console.log(categoriaId)
                 
                 )
             }
-            <ItemCount initial = {1} stock = {10} onAdd={ onAdd } />
+            
         </>
     )}
 export default ItemListContainer

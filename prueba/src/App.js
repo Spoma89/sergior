@@ -7,7 +7,7 @@ import ItemCount  from './components/contador/ItemCount.js'
 import ItemListContainer from './components/itemlist/ItemListContainer.js'
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.js'
 import CartContextProvider from './components/context/CartContext.js'
-
+import Cart from './components/cart/Cart.js'
 
 
 
@@ -34,7 +34,7 @@ const onAdd= cant =>{
       <Route path='/' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />                                        
      <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />
      <Route path='/count'element={<ItemCount initial={1} stock={100} onAdd={onAdd} />}/>
-    <Route path='/cart'element={<CartWidget />}/>
+    <Route path='/cart'element={<Cart />}/>
     
     <Route path='/*' element={ <Navigate to='/'replace />} />
    

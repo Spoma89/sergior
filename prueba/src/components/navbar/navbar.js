@@ -2,6 +2,7 @@ import React from 'react';
 
 import CartWidget from '../carro/CartWidget.js'
 import { NavLink } from 'react-router-dom'
+import Cart from '../cart/Cart.js'
 
 const Navbar = () => {
   return(
@@ -20,7 +21,7 @@ const Navbar = () => {
   </li>
   <li className="nav-item">
     <NavLink to="count" >
-   <CartWidget/>
+   <Cart/>
   </NavLink>
   </li>
  
