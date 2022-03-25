@@ -20,8 +20,8 @@ const Navbar = () => {
     <NavLink  to="categoria/Agua">Agua</NavLink>
   </li>
   <li className="nav-item">
-    <NavLink to="count" >
-   <Cart/>
+    <NavLink to="cart" >
+   <CartWidget/>
   </NavLink>
   </li>
  
