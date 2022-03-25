@@ -10,9 +10,13 @@ function CartContextProvider({children}) {
 
     const agregarCart = (item) => {
 
-        // if no admita duplicados
+      
         setCartList( [ ...cartList, item ] )
     }
+     const precioTotal =()=>{
+        return cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
+    }
+
 
     const vaciarCart=()=>{
         setCartList( [])
