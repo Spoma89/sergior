@@ -23,7 +23,7 @@ const Navbar = () => {
   </li>
   <li className="nav-item">
     <NavLink to="cart" >
-    {cantidadTotalItem()}
+    {cantidadTotalItem()!==0 && cantidadTotalItem ()}
    <CartWidget/>
   </NavLink>
   </li>
