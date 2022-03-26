@@ -66,15 +66,15 @@ console.log(categoriaId)
                 :
                 productos.map((prod) => <div 
                                             key={prod.id}
-                                            className='col-md-4'
+                                            className='row row-cols- row-cols-md-4 g-6'
                                         >                        
-                                            <div className="card text-dark bg-light mb-3"  >
+                                            <div className="row-cols"  >
                                                 <div className="">
-                                                    {`${prod.name} - ${prod.categoria}`}
+                                                   <h3> {`${prod.name} - ${prod.categoria}`}</h3>
                                                 </div>
                                                 <div className="card-body">
                                                     <img src={prod.foto} alt='' className='w-50' />
-                                                    {prod.price}                                                            
+                                                    <h4>${prod.price} </h4>                                                           
                                                 </div>
                                                 <div className="card-footer">
                                                      <Link to={`/detalle/${prod.id}`}> 

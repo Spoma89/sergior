@@ -1,6 +1,6 @@
 import { useCartContext } from "../../components/context/CartContext"
 import { useState } from "react"
-import ItemCount from '../../components/itemdetail/ItemDetail.js'
+import ItemDetail from '../../components/itemdetail/ItemDetail.js'
 
   function Cart() {
     const [dataFomr, setDataFomr] = useState()
@@ -10,8 +10,12 @@ import ItemCount from '../../components/itemdetail/ItemDetail.js'
     return (
       <div>
         cart
-        { cartList.map(item => <li>Nombre: {item.name} Precio: {item.price} cantidad:{item.cantidad} </li>) }
-        <button onClick={vaciarCart}>VaciarCarrto</button>
+        { cartList.map(item => <div>
+          <img src={item.foto} alt='imágen' className='w-25' />
+          <h3>Nombre: {item.name}</h3> 
+          <h4>Precio: {item.price}</h4>
+           cantidad:{item.cantidad} </div>) }
+        <button onClick={vaciarCart}>comprar</button>
       </div>
     )
 }

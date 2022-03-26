@@ -20,7 +20,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     }  
     
     return (
-        <div>
+        <div className="contador">
         	
             <button onClick={restar}> - </button>
             <label> {count} </label>

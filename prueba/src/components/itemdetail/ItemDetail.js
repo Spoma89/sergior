@@ -19,9 +19,9 @@ const ItemDetail = ({producto}) => {
 
   return (
     <div>
-        <h2>{producto.name}</h2>
+        <h3>{producto.name}</h3>
         <img src={producto.foto} alt='imágen' className='w-25' />
-        {producto.name}
+        <h3>{producto.price}</h3>
         { count ?
             <Link to='/cart'>
               <button className='btn btn-outline-primary'>Ir al Cart</button>
