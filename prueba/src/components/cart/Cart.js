@@ -5,7 +5,7 @@ import ItemDetail from '../../components/itemdetail/ItemDetail.js'
   function Cart() {
     const [dataFomr, setDataFomr] = useState()
 
-    const { cartList, vaciarCart, precioTotal } = useCartContext()
+    const { cartList, vaciarCart, precioTotal, removeItem } = useCartContext()
 
     return (
       <div>
@@ -14,8 +14,12 @@ import ItemDetail from '../../components/itemdetail/ItemDetail.js'
           <img src={item.foto} alt='imágen' className='w-25' />
           <h3>Nombre: {item.name}</h3> 
           <h4>Precio: {item.price}</h4>
-           cantidad:{item.cantidad} </div>) }
+           cantidad:{item.cantidad} 
+            <button onClick={() => removeItem(item.id)} >x</button></div>
+           )
+            }
         <button onClick={vaciarCart}>comprar</button>
+       
       </div>
     )
 }

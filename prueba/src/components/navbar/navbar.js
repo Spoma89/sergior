@@ -1,10 +1,12 @@
 import React from 'react';
 
 import CartWidget from '../carro/CartWidget.js'
-import { NavLink } from 'react-router-dom'
+import { NavLink }  from 'react-router-dom'
 import Cart from '../cart/Cart.js'
+import {useCartContext }  from  '../context/CartContext.js'
 
 const Navbar = () => {
+  const {cantidadTotalItem}= useCartContext()
   return(
   
 <nav className="nav">
@@ -21,6 +23,7 @@ const Navbar = () => {
   </li>
   <li className="nav-item">
     <NavLink to="cart" >
+    {cantidadTotalItem()}
    <CartWidget/>
   </NavLink>
   </li>
