@@ -15,10 +15,22 @@ function CartContextProvider({children}) {
     const [cartList, setCartList] = useState([])
 
     const agregarCart = (item) => {
-
-      
-        setCartList( [ ...cartList, item ] )
+     if (cartList.length > 0) {
+            cartList.forEach(prod =>prod.id === item.id && (item.quantity += prod.quantity));
+            setCartList([...cartList.filter(prod => prod.id !== item.id), item]);
+        } else {
+            setCartList([...cartList, item]);
+        }
     }
+    
+    
+
+const addCantidad = (item)=>{
+    const itemCantidad =cartList.map (item.id ? {... item,cantidad: item.cantidad += 1}: item);
+    return setCartList(itemCantidad)
+}
+
+
      const precioTotal =()=>{
         return cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
     }
@@ -43,7 +55,8 @@ const cantidadTotalItem =()=>{
             agregarCart,
             vaciarCart,
             removeItem,
-            cantidadTotalItem
+            cantidadTotalItem,
+            addCantidad
             
         }}>
             {children}

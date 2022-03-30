@@ -9,7 +9,7 @@ import ItemDetail from '../../components/itemdetail/ItemDetail.js'
 
     return (
       <div>
-        cart
+        <h1>cart</h1>
         { cartList.map(item => <div>
           <img src={item.foto} alt='imágen' className='w-25' />
           <h3>Nombre: {item.name}</h3> 
