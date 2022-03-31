@@ -1,12 +1,16 @@
 import { useCartContext } from "../../components/context/CartContext"
 import { useState } from "react"
 import ItemDetail from '../../components/itemdetail/ItemDetail.js'
+import { NavLink }  from 'react-router-dom'
+  
+
+
 
   function Cart() {
     const [dataFomr, setDataFomr] = useState()
 
     const { cartList, vaciarCart, precioTotal, removeItem } = useCartContext()
-
+  
     return (
       <div>
         <h1>cart</h1>
@@ -23,5 +27,6 @@ import ItemDetail from '../../components/itemdetail/ItemDetail.js'
       </div>
     )
 }
+
 
 export default Cart
