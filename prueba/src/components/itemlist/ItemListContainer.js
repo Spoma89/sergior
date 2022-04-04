@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
-
+import React from 'react'
 import {getFetch } from '../../Helpers/getFetch.js'
 import {productos} from '../../Helpers/getFetch.js'
 import ItemCount  from '../../components/contador/ItemCount.js'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 
 function ItemListContainer( {greeting} )  {
@@ -14,42 +14,37 @@ function ItemListContainer( {greeting} )  {
   
   const { categoriaId } = useParams()
 
-  useEffect(() => {
-    if (categoriaId) {
-      getFetch// llamada a la api
-      .then((respuesta)=> {
-        //throw new Error('Esto es un error')
-        //console.log(respuesta) //json  convierto a objeto js
-        return respuesta
-      })
-      .then((resp) => setProductos( resp.filter(prod=> prod.categoria === categoriaId) ))
-      .catch(err => console.log(err))
-      .finally(()=> setLoading(false))      
-      
-    }else{
-      getFetch// llamada a la api
-      .then((respuesta)=> {
-        //throw new Error('Esto es un error')
-        //console.log(respuesta) //json  convierto a objeto js
-        return respuesta
-      })
-      .then((resp) => setProductos(resp))
-      .catch(err => console.log(err))
-      .finally(()=> setLoading(false))      
+     useEffect(() => {
+        const db = getFirestore()
+        if (categoriaId) {
+            const queryColection = collection(db, 'items')
+            const queryFilter = query( queryColection, where('categoria', '==', categoriaId)  )
+            getDocs(queryFilter)
+            .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false)) 
+        }else{
+            const queryColection = collection(db, 'items')
+            getDocs(queryColection)
+            .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))             
+        }
 
-    }
+    }, [categoriaId])
+   useEffect(() => {
+         const db = getFirestore()
+         const queryColection = collection(db, 'items')
+        getDocs(queryColection)
+         .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ))
+         .catch(err => console.log(err))
+        .finally(()=> setLoading(false))     
+     },[])
 
-  }, [categoriaId])
-console.log(categoriaId)
+
     
     
-    // useEffect(() => {
-    //     let url = 'assets/DATA.json'
-    //     fetch(url)
-    //     .then(resp => resp.json() )
-    //     .then(resp => console.log(resp))
-    // }, [])
-    
+   
   
     const onAdd = (cant) => {
        
@@ -73,7 +68,7 @@ console.log(categoriaId)
                                                    <h3> {`${prod.name} - ${prod.categoria}`}</h3>
                                                 </div>
                                                 <div className="card-body">
-                                                    <img src={prod.foto} alt='' className='w-50' />
+                                                    <img src={prod.image} alt='' className='w-50' />
                                                     <h4>${prod.price} </h4>                                                           
                                                 </div>
                                                 <div className="card-footer">
@@ -94,6 +89,7 @@ console.log(categoriaId)
         </>
     )}
 export default ItemListContainer
+
 
 
 

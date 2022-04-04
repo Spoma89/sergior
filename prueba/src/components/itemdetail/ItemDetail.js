@@ -20,7 +20,7 @@ const ItemDetail = ({producto}) => {
   return (
     <div>
         <h3>{producto.name}</h3>
-        <img src={producto.foto} alt='imágen' className='w-25' />
+        <img src={producto.image} alt='imágen' className='w-25' />
         <h3>{producto.price}</h3>
         { count ?
             <Link to='/cart'>

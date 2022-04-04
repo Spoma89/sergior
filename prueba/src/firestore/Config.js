@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { initializeApp } from "firebase/app";
 
 
@@ -17,7 +17,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
+const app = initializeApp(firebaseConfig)
 
 export default function getFirestoreApp(){
     return app

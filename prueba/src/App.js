@@ -8,7 +8,7 @@ import ItemListContainer from './components/itemlist/ItemListContainer.js'
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.js'
 import CartContextProvider from './components/context/CartContext.js'
 import Cart from './components/cart/Cart.js'
-
+import React from 'react'
 
 
 
