@@ -56,6 +56,7 @@ const cantidadTotalItem =()=>{
             vaciarCart,
             removeItem,
             cantidadTotalItem,
+            precioTotal,
             addCantidad
             
         }}>

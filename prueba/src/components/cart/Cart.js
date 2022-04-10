@@ -74,6 +74,8 @@ function Cart() {
                                   <li key={item.id}>
                                     nombre: {item.name} precio: {item.price} cantidad:{item.cantidad}
                                   </li>
+                                  <li>el total de la compra es${item.cantidad*item.price}</li>
+                                  <li>${precioTotal()}</li>
                                   <button onClick={() => removeItem(item.id) }> X </button> <hr></hr>
                                 </>
                       )

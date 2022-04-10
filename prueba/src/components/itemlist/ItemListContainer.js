@@ -61,10 +61,10 @@ function ItemListContainer( {greeting} )  {
                 :
                 productos.map((prod) => <div 
                                             key={prod.id}
-                                            className='row row-cols- row-cols-md-4 g-6'
+                                            className='row row-cols-1 row-cols-md-2'
                                         >                        
-                                            <div className="row-cols"  >
-                                                <div className="">
+                                            <div className="row-cols-md-2"  >
+                                                <div className="card">
                                                    <h3> {`${prod.name} - ${prod.categoria}`}</h3>
                                                 </div>
                                                 <div className="card-body">
@@ -82,6 +82,7 @@ function ItemListContainer( {greeting} )  {
                                             </div>
                                         
                                         </div>
+
                 
                 )
             }
