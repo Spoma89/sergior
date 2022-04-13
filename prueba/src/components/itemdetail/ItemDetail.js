@@ -17,21 +17,40 @@ const ItemDetail = ({producto}) => {
   }
   console.log(cartList)
 
-  return (
-    <div>
-        <h3>{producto.name}</h3>
-        <img src={producto.image} alt='imágen' className='w-25' />
-        <h3>{producto.price}</h3>
-        { count ?
+  return (  
+
+<div className="container">
+  <div className="card">
+    <div className="card-header">
+      <img src ={producto.image} alt="productos"className="fotodetail"></img>
+    </div>
+    <div className="card-body">
+      <span className="tag tag-teal">{producto.categoria}</span>
+      <h4>{producto.name}</h4>
+       <h4>{producto.descripcion}</h4>
+      <h4>${producto.price}</h4>
+      { count ?
             <Link to='/cart'>
               <button className='btn btn-outline-primary'>Ir al Cart</button>
             </Link> 
           :
             <ItemCount initial={1} stock={10} onAdd={onAdd} />
         }
+        
+        
+        
+      </div>
     </div>
+  </div>
+
+    
   )
 }
+ 
+
+
+   
+        
 
 
 

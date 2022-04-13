@@ -9,27 +9,31 @@ const Navbar = () => {
   const {cantidadTotalItem}= useCartContext()
   return(
   
-<nav className="nav">
-<ul className="nav justify-content-center">
 
-  <li className="nav-item">
+ <ul>
+
+  <li>
   <NavLink to="/">Home</NavLink>
   </li>
-  <li className="nav-item">
+  <li>
   <NavLink  to="categoria/Obras">Obras</NavLink>
   </li>
-  <li className="nav-item">
+  <li>
     <NavLink  to="categoria/Agua">Agua</NavLink>
   </li>
-  <li className="nav-item">
+  <li>
     <NavLink to="cart" >
-    {cantidadTotalItem()!==0 && cantidadTotalItem ()}
+  
+   
+
+    
    <CartWidget/>
+  
   </NavLink>
   </li>
  
 </ul>
-</nav>
+
 )
 
 }

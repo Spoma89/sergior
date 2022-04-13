@@ -54,34 +54,42 @@ function ItemListContainer( {greeting} )  {
 
 
  return (
-      // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
+     // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
       <>
-            <h1>{  }</h1>
-            {   loading ? <h1>Cargando...</h1>
+            <h1></h1>
+            {   loading ? <button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
                 :
-                productos.map((prod) => <div 
-                                            key={prod.id}
-                                            className='row row-cols-1 row-cols-md-2'
-                                        >                        
-                                            <div className="row-cols-md-2"  >
-                                                <div className="card">
-                                                   <h3> {`${prod.name} - ${prod.categoria}`}</h3>
-                                                </div>
-                                                <div className="card-body">
-                                                    <img src={prod.image} alt='' className='w-50' />
-                                                    <h4>${prod.price} </h4>                                                           
-                                                </div>
-                                                <div className="card-footer">
-                                                     <Link to={`/detalle/${prod.id}`}> 
-                                                        <button className="btn btn-outline-primary btn-block">
+                productos.map((prod) =>
+
+                <section  key={prod.id}
+                 className="main--container">
+                  <article className="card1">
+                    <img src ={prod.image}  alt=""className="det"></img>
+                  <article className="content">
+                    <h3>{`${prod.name} - ${prod.categoria}`}</h3>
+                        <p>${prod.price}</p>
+                            <Link to={`/detalle/${prod.id}`}className="cart"> 
+                                                        <button className="btn btn-outline-secundary btn-block">
                                                             detalle del producto
-                                                        </button>                                              
-                                                     </Link>                                             
-                                                                                                                
-                                                </div>
-                                            </div>
-                                        
-                                        </div>
+                                                        </button>   
+                            </Link>     
+                   </article>
+                 </article>
+               </section>
+
+
+
+          
+          
+     
+     
+     
+
+ 
+
 
                 
                 )
@@ -92,6 +100,4 @@ function ItemListContainer( {greeting} )  {
 export default ItemListContainer
 
 
-
-
-
+           

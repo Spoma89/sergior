@@ -69,18 +69,56 @@ function Cart() {
     console.log(dataForm)
     return (
       <div>
-        {id.length !== '' && `el id de la compra es: ${id}`}
-        { cartList.map(item =>  <>
-                                  <li key={item.id}>
-                                    nombre: {item.name} precio: {item.price} cantidad:{item.cantidad}
-                                  </li>
-                                  <li>el total de la compra es${item.cantidad*item.price}</li>
-                                  <li>${precioTotal()}</li>
-                                  <button onClick={() => removeItem(item.id) }> X </button> <hr></hr>
+        {id.length !== 0 && `el id de la compra es: ${id}`}
+        { cartList.map(item =>  <><table key={item.id} className="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Producto</th>
+      <th scope="col">precio</th>
+      <th scope="col">cantidad</th>
+      <th scope="col">cantidad total</th>
+      <th scope="col">Quitar item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <th scope="row"></th>
+      <td>{item.name}</td>
+      <td>${item.price}</td>
+      <td>{item.cantidad}</td>
+      <td>{item.cantidad*item.price}</td>
+       <button className="remove" onClick={() => removeItem(item.id) }><i class="bi bi-x-circle-fill"></i>  </button> 
+    </tr>
+    </tbody>
+    
+    </table>
+ 
+   
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+          
                                 </>
                       )
                                 
         }
+        <h1><i class="bi bi-clipboard2-check"></i> Total de la compra${precioTotal()}</h1>
         <button onClick={vaciarCart}>VaciarCarrto</button>
         <form 
                 onSubmit={generarOrden}                 
@@ -114,3 +152,5 @@ function Cart() {
 }
 
 export default Cart
+
+
