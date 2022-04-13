@@ -6,6 +6,8 @@ import ItemCount  from '../../components/contador/ItemCount.js'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
+import Item from '../../components/item/Item.js'
+import ItemList from '../../components/itemlist/Itemlist.js'
 
 
 function ItemListContainer( {greeting} )  {
@@ -56,48 +58,22 @@ function ItemListContainer( {greeting} )  {
  return (
      // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
       <>
-            <h1></h1>
+            <h1>{ greeting }</h1>
             {   loading ? <button class="btn btn-primary" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Loading...
 </button>
                 :
-                productos.map((prod) =>
-
-                <section  key={prod.id}
-                 className="main--container">
-                  <article className="card1">
-                    <img src ={prod.image}  alt=""className="det"></img>
-                  <article className="content">
-                    <h3>{`${prod.name} - ${prod.categoria}`}</h3>
-                        <p>${prod.price}</p>
-                            <Link to={`/detalle/${prod.id}`}className="cart"> 
-                                                        <button className="btn btn-outline-secundary btn-block">
-                                                            detalle del producto
-                                                        </button>   
-                            </Link>     
-                   </article>
-                 </article>
-               </section>
-
-
-
-          
-          
-     
-     
-     
-
- 
-
-
+               <ItemList productos= {productos} />                
                 
-                )
             }
+            {/* <ItemCount initial = {1} stock = {10} onAdd={ onAdd } /> */}
             
         </>
     )}
 export default ItemListContainer
+
+   
 
 
            
