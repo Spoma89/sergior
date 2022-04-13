@@ -11,17 +11,17 @@ function Item({prod}) {
         >                        
             <div className="card w-100 mt-5" >
                 <div className="card-header">
-                    {`${prod.name} - ${prod.categoria}`}
+                    <p>{`${prod.name} - ${prod.categoria}`}</p>
                 </div>
                 <div className="card-body">
                     <img src={prod.image} alt='' className='w-50' />
-                    {prod.price}                                                            
+                    <h3>Precio contado ${prod.price}</h3>                                                            
                 </div>
 
                 <div className="card-footer">
                     <Link to={`detalle/${prod.id}`} >
                         <button className="btn btn-outline-primary btn-block">
-                            detalle del producto
+                            ir adetalle del producto
                         </button>                                              
                     </Link>
                     

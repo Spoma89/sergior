@@ -88,10 +88,10 @@ function Cart() {
       <td>{item.name}</td>
       <td>${item.price}</td>
       <td>{item.cantidad}</td>
-      <td>{item.cantidad*item.price}</td>
+      <td>${item.cantidad*item.price}</td>
        <button className="remove" onClick={() => removeItem(item.id) }><i class="bi bi-x-circle-fill"></i>  </button> 
     </tr>
-    </tbody>
+    </tbody>    
     
     </table>
  

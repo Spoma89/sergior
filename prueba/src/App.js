@@ -31,8 +31,8 @@ const onAdd= cant =>{
     <Navbar />
     <Routes>
      <Route path='/detalle/:detalleId'element={<ItemDetailContainer />} />
-      <Route path='/' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />                                        
-     <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='soy ITEMLISTCONTAINER' />} />
+      <Route path='/' element={<ItemListContainer greeting='productos' />} />                                        
+     <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='productos' />} />
      <Route path='/count'element={<ItemCount initial={1} stock={100} onAdd={onAdd} />}/>
     <Route path='/cart'element={<Cart />}/>
     

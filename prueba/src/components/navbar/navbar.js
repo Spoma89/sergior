@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Logo from '../logo/Logo.js'
 import CartWidget from '../carro/CartWidget.js'
 import { NavLink }  from 'react-router-dom'
 import Cart from '../cart/Cart.js'
@@ -31,7 +31,9 @@ const Navbar = () => {
   
   </NavLink>
   </li>
- 
+  <li>
+  <Logo/>
+   </li>
 </ul>
 
 )
