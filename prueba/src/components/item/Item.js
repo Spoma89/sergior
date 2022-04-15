@@ -20,7 +20,7 @@ function Item({prod}) {
 
                 <div className="card-footer">
                     <Link to={`detalle/${prod.id}`} >
-                        <button className="btn btn-outline-primary btn-block">
+                        <button className="btn btn-light">
                             ir adetalle del producto
                         </button>                                              
                     </Link>

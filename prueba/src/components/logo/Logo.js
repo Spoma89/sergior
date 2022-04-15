@@ -9,8 +9,8 @@ const Logo = () => {
   return(
 
 
-  	<div>
- <img src= "https://www.zarla.com/images/zarla-construye-fcil-1x1-2400x2400-20220117-j6bhqr7twjgdb8ghjcw6.png?crop=1:1,smart&width=250&dpr=2"   alt="logo" className="logo"></img>
+  	<div className="logotipo">
+ <img src= "https://home.mustadlatam.com/wp-content/uploads/sites/5/2019/09/Banner-Herramientas-COL-2378x499px-Martillo.jpg"   alt="logo" className="logo"></img>
 
 
   

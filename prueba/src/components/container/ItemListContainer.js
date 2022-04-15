@@ -8,7 +8,8 @@ import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 import Item from '../../components/item/Item.js'
 import ItemList from '../../components/itemlist/Itemlist.js'
-
+import Logo from '../../components/logo/Logo.js'
+import Footer from '../../components/footer/Footer.js'
 
 function ItemListContainer( {greeting} )  {
   const [productos, setProductos] = useState([])
@@ -58,6 +59,7 @@ function ItemListContainer( {greeting} )  {
  return (
      // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
       <>
+      <Logo/>
             <h1>{ greeting }</h1>
             {   loading ? <button class="btn btn-primary" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -68,7 +70,7 @@ function ItemListContainer( {greeting} )  {
                 
             }
             
-            
+           <Footer/> 
         </>
     )}
 export default ItemListContainer
