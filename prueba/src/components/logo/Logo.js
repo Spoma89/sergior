@@ -10,7 +10,7 @@ const Logo = () => {
 
 
   	<div className="logotipo">
- <img src= "https://home.mustadlatam.com/wp-content/uploads/sites/5/2019/09/Banner-Herramientas-COL-2378x499px-Martillo.jpg"   alt="logo" className="logo"></img>
+ <img src= "https://todopago.com.ar/sites/todopago.com.ar/files/banner_12cuotas-3494x374.png"   alt="logo" className="logo"></img>
 
 
   

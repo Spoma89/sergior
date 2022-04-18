@@ -60,7 +60,7 @@ function ItemListContainer( {greeting} )  {
      // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
       <>
       <Logo/>
-            <h1>{ greeting }</h1>
+            <h6>{ greeting }</h6>
             {   loading ? <button class="btn btn-primary" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Loading...

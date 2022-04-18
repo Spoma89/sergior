@@ -21,12 +21,44 @@ import {
 function Cart() {
     const [dataForm, setDataForm] = useState({
       email: '', name: '', phone: ''
+
+
     })
+    const validar = (dataForm) => {
+     if (dataForm.nombre.length < 5) {
+        alert("El nombre es demasiado corto")
+        return false
+    }
+    if (dataForm.email.length < 7) {
+        alert("El email es inválido")
+        return false
+    }
+    if (dataForm.tel.length < 8) {
+        alert("El teléfono es inválido")
+        return false
+    }
+
+    return true
+}
+
     const [id, setId] = useState('')
 
-    const { cartList, vaciarCart, precioTotal, removeItem } = useCartContext()
+    const { cartList,
+            agregarCart,
+            vaciarCart,
+            removeItem,
+            cantidadTotalItem,
+            precioTotal,
+            addCantidad } = useCartContext()
 
-    // fucntion {}
+    if (cartList.length === 0) {
+        return <div className="container my-4">
+                     
+<h2><i className="bi bi-exclamation-triangle-fill"></i>Tu carrito está vacío selecciona algun producto</h2>
+                    
+                    <NavLink to="/" className="btn btn-primary">Volver</NavLink>
+                </div>
+    }
     const generarOrden = async (e)=>{
       e.preventDefault();
          
@@ -65,11 +97,26 @@ function Cart() {
       })
     }
 
-
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        validar(dataForm) && generarOrden(cartList,
+            agregarCart,
+            vaciarCart,
+            removeItem,
+            cantidadTotalItem,
+            precioTotal,
+            addCantidad )
+    }
+    
     console.log(dataForm)
     return (
+
       <div>
-        {id.length !== 0 && `el id de la compra es: ${id}`}
+     
+    
+
+        
+
         { cartList.map(item =>  <><table key={item.id} className="table">
   <thead>
     <tr>
@@ -92,7 +139,7 @@ function Cart() {
        <button className="remove" onClick={() => removeItem(item.id) }><i class="bi bi-x-circle-fill"></i>  </button> 
     </tr>
     </tbody>    
-    
+    <button onClick={vaciarCart}>VaciarCarrto</button>
     </table>
  
    
@@ -118,13 +165,15 @@ function Cart() {
                       )
                                 
         }
-        <h1><i class="bi bi-clipboard2-check"></i> Total de la compra${precioTotal()}</h1>
-        <button onClick={vaciarCart}>VaciarCarrto</button>
+        <h1><i className="bi bi-clipboard2-check"></i> Total de la compra${precioTotal()}</h1>
+        <h2>Completa tus datos para finalizar la compra</h2>
+        <div className="form-floating mb-3">
         <form 
                 onSubmit={generarOrden}                 
             >
                 <input 
                     type='text' 
+                    className="form-control" id="floatingInput"
                     name='name' 
                     placeholder='name' 
                     value={dataForm.name}
@@ -132,21 +181,27 @@ function Cart() {
                 /><br />
                 <input 
                     type='text' 
+                    className="form-control" id="floatingInput"
                     name='phone'
                     placeholder='tel' 
                     value={dataForm.phone}
                     onChange={handleChange}
                 /><br/>
                 <input 
-                    type='email' 
+                    type='email'
+                    className="form-control" id="floatingInput" 
                     name='email'
                     placeholder='email' 
                     value={dataForm.email}
                     onChange={handleChange}
                 /><br/>
                 { <button>Generar Orden</button> }
+
+                {id.length !== 0 && `Compra finalizada, el numero de tu compra es: ${id}`}
                 
+
             </form>
+      </div>
       </div>
     )
 }
