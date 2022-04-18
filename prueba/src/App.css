@@ -20,7 +20,9 @@ body {
   color: #10182f;
 
 }
-
+h2{
+  text-align: center;
+}
 
 /*navegador*/
 h6{

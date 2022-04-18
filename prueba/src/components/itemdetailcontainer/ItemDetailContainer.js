@@ -1,6 +1,6 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
-import {getFetch}   from '../../Helpers/getFetch.js'
+
 import ItemDetail from '../../components/itemdetail/ItemDetail.js'
 import { useParams } from 'react-router-dom'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
