@@ -166,7 +166,7 @@ function Cart() {
                                 
         }
         <h1><i className="bi bi-clipboard2-check"></i> Total de la compra${precioTotal()}</h1>
-        <h2>Completa tus datos para finalizar la compra</h2>
+        <h2>Completa tus datos para finalizar la compra hhh</h2>
         <div className="form-floating mb-3">
         <form 
                 onSubmit={generarOrden}                 
