@@ -88,7 +88,15 @@ const [id, setId] = useState('')
           [e.target.name]: e.target.value
       })
     }
-
+ if (id.length !== 0) {
+        return <div className="container my-4">
+                     
+<h2>Tu compra se realizo correctamente</h2>
+<h2> Total de la compra ${precioTotal()}</h2>
+ {id.length !== 0 && `tu numero de comprobante es:  ${id}`}                   
+                    <NavLink to="/" className="btn btn-primary"onClick={vaciarCart}>Aceptar</NavLink>
+                </div>
+    }
   
     
     console.log(dataForm)
@@ -128,13 +136,16 @@ const [id, setId] = useState('')
                 /><br/>
                 { <button>Generar Orden</button> }
 
-                {id.length !== 0 && `Compra finalizada, el numero de tu compra es: ${id}`}
-                 
-                 
+                
+               
+                
 
             </form>
 
   
+
+   
+
           
                                
                       
