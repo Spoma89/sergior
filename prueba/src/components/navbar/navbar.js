@@ -1,10 +1,14 @@
 import React from 'react';
+import { NavLink }  from 'react-router-dom'
 import Logo from '../logo/Logo.js'
 import CartWidget from '../carro/CartWidget.js'
-import { NavLink }  from 'react-router-dom'
 import Cart from '../cart/Cart.js'
 import {useCartContext }  from  '../context/CartContext.js'
 import Stilogo from '../stilogo/Stilogo.js'
+
+
+
+
 const Navbar = () => {
   const {cantidadTotalItem}= useCartContext()
   return(

@@ -1,9 +1,11 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import ItemCount from '../../components/contador/ItemCount.js'
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { useCartContext } from "../../components/context/CartContext.js"
+import ItemCount from '../../components/contador/ItemCount.js'
+
+
 
 const ItemDetail = ({producto}) => {
   const [count, setCount] = useState(null)

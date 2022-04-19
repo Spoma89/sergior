@@ -1,7 +1,8 @@
+import React from 'react'
 import { memo } from 'react'
 import Item from '../../components/item/Item.js'
-import React from 'react'
-// memo( ()=>{} ) es el componente // memo( ()=>{}, fn ) es el componente
+
+
 const ItemList = memo(
     ({productos}) => {
         console.log('ItemList')

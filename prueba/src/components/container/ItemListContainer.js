@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react"
 import React from 'react'
-import {getFetch } from '../../Helpers/getFetch.js'
-import {productos} from '../../Helpers/getFetch.js'
-import ItemCount  from '../../components/contador/ItemCount.js'
+import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
+import {getFetch } from '../../Helpers/getFetch.js'
+import {productos} from '../../Helpers/getFetch.js'
+import ItemCount  from '../../components/contador/ItemCount.js'
 import Item from '../../components/item/Item.js'
 import ItemList from '../../components/itemlist/Itemlist.js'
 import Logo from '../../components/logo/Logo.js'
@@ -57,7 +57,7 @@ function ItemListContainer( {greeting} )  {
 
 
  return (
-     // [1,2,3,4] => nuevo arra [<li>1</li>, ....]
+     
       <>
       <Logo/>
             <h6>{ greeting }</h6>

@@ -1,3 +1,4 @@
+ import React from 'react'
  import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
  import logo from './logo.svg';
 import './App.css';
@@ -8,7 +9,8 @@ import ItemListContainer from './components/container/ItemListContainer.js'
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.js'
 import CartContextProvider from './components/context/CartContext.js'
 import Cart from './components/cart/Cart.js'
-import React from 'react'
+import Form from './components/cart/Form.js'
+
 
 
 
@@ -35,7 +37,7 @@ const onAdd= cant =>{
      <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting='Productos' />} />
      <Route path='/count'element={<ItemCount initial={1} stock={100} onAdd={onAdd} />}/>
     <Route path='/cart'element={<Cart />}/>
-    
+    <Route path='/form'element={<Form />}/>
     <Route path='/*' element={ <Navigate to='/'replace />} />
    
    	</Routes>
