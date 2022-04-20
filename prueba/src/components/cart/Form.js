@@ -25,22 +25,7 @@ function Form() {
 
 
     })
-    const validar = (dataForm) => {
-     if (dataForm.name.length < 5) {
-        alert("El nombre es demasiado corto")
-        return false
-    }
-    if (dataForm.email.length < 7) {
-        alert("El email es inválido")
-        return false
-    }
-    if (dataForm.phone.length < 8) {
-        alert("El teléfono es inválido")
-        return false
-    }
-
-    return true
-}
+   
 const [id, setId] = useState('')
      const { cartList,
             agregarCart,
@@ -89,15 +74,40 @@ const [id, setId] = useState('')
       })
     }
  if (id.length !== 0) {
-        return <div className="container my-4">
+        return <div>
                      
-<h2>Tu compra se realizo correctamente</h2>
+<h1 className="comprafinalizada">Tu compra se realizo correctamente</h1>
 <h2> Total de la compra ${precioTotal()}</h2>
- {id.length !== 0 && `tu numero de comprobante es:  ${id}`}                   
+ <h2>{id.length !== 0 && `Tu  comprobante de compra es:  ${id}`} </h2>                  
                     <NavLink to="/" className="btn btn-primary"onClick={vaciarCart}>Aceptar</NavLink>
                 </div>
     }
-  
+  const handleSubmit = (e) => {
+        e.preventDefault()
+        validar(dataForm) && generarOrden(cartList,
+            agregarCart,
+            vaciarCart,
+            removeItem,
+            cantidadTotalItem,
+            precioTotal,
+            addCantidad )
+    }
+ const validar = (dataForm) => {
+     if (dataForm.name.length <= 5) {
+        alert("El nombre es demasiado corto")
+        return false
+    }
+    if (dataForm.email.length <= 7) {
+        alert("El email es inválido")
+        return false
+    }
+    if (dataForm.phone.length <= 8) {
+        alert("El teléfono es inválido")
+        return false
+    }
+
+    return true
+}
     
     console.log(dataForm)
     return (
@@ -106,6 +116,11 @@ const [id, setId] = useState('')
      
      <h2><i className="bi bi-clipboard2-check"></i> Total de la compra${precioTotal()}</h2>
         <h1>Para finalizar la compra completa los datos </h1>
+
+
+
+
+
         <div className="form-floating mb-3">
         <form 
                 onSubmit={generarOrden}                 
@@ -142,7 +157,7 @@ const [id, setId] = useState('')
 
             </form>
 
-  
+ 
 
    
 
